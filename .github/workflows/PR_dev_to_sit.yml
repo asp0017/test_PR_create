@@ -16,6 +16,6 @@ jobs:
             python-version: '3.10'
       
       - name: create pull request
-        run: gh pr create -B dev -H sit --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        run: gh pr create -B sit -H dev --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
