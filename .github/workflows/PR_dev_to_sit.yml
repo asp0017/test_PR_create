@@ -19,3 +19,8 @@ jobs:
         run: gh pr create -B sit -H dev --title 'Merge dev into sit' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
+      - name: Merge Pull Request
+        run: gh pr merge ${{ steps.create-pull-request.outputs.pr-number }} --auto
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
