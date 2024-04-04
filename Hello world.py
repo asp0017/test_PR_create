@@ -1,4 +1,3 @@
 print("Hello world!")
-print("conflict")
 
-# the PR test on 17:22
+# the PR test on 18:17
