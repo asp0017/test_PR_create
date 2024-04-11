@@ -5,7 +5,7 @@ on:
       - dev
 jobs:
   create-pull-request:
-    if: github.ref == 'refs/heads/dev' && github.event_name == 'push' && contains(github.event.compare, 'refs/heads/sit')
+    if: github.ref == 'refs/heads/dev' && github.event_name == 'push' && contains(github.event.compare, '/sit')
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
