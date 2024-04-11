@@ -5,7 +5,6 @@ on:
       - sit
 jobs:
   create-pull-request:
-    if: github.ref == 'refs/heads/dev' && github.ref == 'refs/heads/sit'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
