@@ -2,9 +2,10 @@ name: PR for dev to sit
 on:
   push:
     branches:
-      - dev
+      - sit
 jobs:
   create-pull-request:
+    if: ${{ github.REF }} == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
