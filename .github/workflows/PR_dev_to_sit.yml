@@ -2,10 +2,10 @@ name: PR for dev to sit
 on:
   push:
     branches:
-      - dev
+      - sit
 jobs:
   create-pull-request:
-    if: github.ref == 'refs/heads/dev' && github.event_name == 'push' && contains(github.event.compare, '/sit')
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
