@@ -2,7 +2,7 @@ name: PR for dev to sit
 on:
   push:
     branches:
-      - sit
+      - dev
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
