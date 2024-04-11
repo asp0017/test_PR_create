@@ -5,7 +5,6 @@ on:
       - sit
 jobs:
   create-pull-request:
-    if: ${{ github.REF }} == 'refs/heads/dev'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -15,6 +14,11 @@ jobs:
         uses: actions/setup-python@v2
         with:
             python-version: '3.10'
+      
+      - name: Output github.ref and github.event.after
+        run: |
+            echo "github.ref: ${{ github.ref }}"
+            echo "github.event.after: ${{ github.event.after }}"
       
       - name: create pull request
         run: gh pr create -B sit -H ${{ github.REF }} --title 'Merge ${{ github.REF }} into sit' --body 'Created by Github action'
